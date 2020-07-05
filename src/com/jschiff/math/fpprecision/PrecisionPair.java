@@ -1,11 +1,11 @@
 package com.jschiff.math.fpprecision;
 
-public class PrecisionPair1 {
+public class PrecisionPair {
     final float low;
     final float high;
     final long numberOfValuesBetween;
 
-    public PrecisionPair1(float low, float high, long count) {
+    public PrecisionPair(float low, float high, long count) {
         this.low = low;
         this.high = high;
         this.numberOfValuesBetween = count;
