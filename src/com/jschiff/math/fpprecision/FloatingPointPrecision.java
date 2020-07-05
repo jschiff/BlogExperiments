@@ -1,5 +1,6 @@
-package com.jschiff.math;
+package com.jschiff.math.fpprecision;
 
+import java.util.Objects;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
@@ -11,28 +12,15 @@ public class FloatingPointPrecision {
         var fpp = new FloatingPointPrecision();
         var results = fpp.processRange(start, end);
 
-        results.forEach(pair -> System.out.println(pair));
+        results.forEach(System.out::println);
     }
 
     public Stream<PrecisionPair> processRange(float start, float end) {
-        Stream<PrecisionPair> result = Stream.generate(new PairSupplier(start, end))
-                .takeWhile(p -> p != null);
-        return result;
+        return Stream.generate(new PairSupplier(start, end))
+                .takeWhile(Objects::nonNull);
     }
 
-    public static PrecisionPair numberOfValues(float from) {
-        float cursor = from;
-        float target = from + 1;
-        long iterations = 0;
-        while (cursor < target) {
-            cursor = Math.nextUp(cursor);
-            iterations++;
-        }
-
-        return new PrecisionPair(from, target, iterations);
-    }
-
-    private class PairSupplier implements Supplier<PrecisionPair> {
+    private static class PairSupplier implements Supplier<PrecisionPair> {
         final float start;
         final float target;
 
@@ -52,7 +40,7 @@ public class FloatingPointPrecision {
                 return null;
             }
 
-            var toReturn = FloatingPointPrecision.numberOfValues(cursor);
+            var toReturn = Common.numberOfValues(cursor);
             cursor++;
             return toReturn;
         }
