@@ -15,12 +15,12 @@ public class FloatingPointPrecision3 {
         results.forEach(pair -> System.out.println(pair.toStringWithDifference()));
     }
 
-    public Stream<PrecisionPair> processRange(float start, float end) {
+    public Stream<PrecisionPair2> processRange(float start, float end) {
         return Stream.generate(new PairSupplier(start, end))
                 .takeWhile(Objects::nonNull);
     }
 
-    private static class PairSupplier implements Supplier<PrecisionPair> {
+    private static class PairSupplier implements Supplier<PrecisionPair2> {
         final float start;
         final float end;
 
@@ -35,7 +35,7 @@ public class FloatingPointPrecision3 {
         }
 
         @Override
-        public PrecisionPair get() {
+        public PrecisionPair2 get() {
             if (cursor > end) {
                 return null;
             }

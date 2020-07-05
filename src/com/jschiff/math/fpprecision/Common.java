@@ -1,7 +1,7 @@
 package com.jschiff.math.fpprecision;
 
 public class Common {
-    public static PrecisionPair numberOfValues(float from) {
+    public static PrecisionPair1 numberOfValues(float from) {
         float cursor = from;
         float target = from + 1;
         long iterations = 0;
@@ -10,10 +10,10 @@ public class Common {
             iterations++;
         }
 
-        return new PrecisionPair(from, target, iterations);
+        return new PrecisionPair1(from, target, iterations);
     }
 
-    public static PrecisionPair numberOfValuesWithFix(float from) {
+    public static PrecisionPair2 numberOfValuesWithFix(float from) {
         float cursor = from;
         float target = from + 1;
 
@@ -28,6 +28,6 @@ public class Common {
             iterations++;
         }
 
-        return new PrecisionPair(from, target, iterations);
+        return new PrecisionPair2(from, target, iterations);
     }
 }
