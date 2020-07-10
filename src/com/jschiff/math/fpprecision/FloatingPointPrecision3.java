@@ -12,7 +12,7 @@ public class FloatingPointPrecision3 {
         var fpp = new FloatingPointPrecision3();
         var results = fpp.processRange(start, end);
 
-        System.out.println("Low, High, Values In Between");
+        System.out.println("Low, High, Values In Between, Distance Between Values");
         results.forEach(pair -> System.out.println(pair.toString()));
     }
 
@@ -42,7 +42,7 @@ public class FloatingPointPrecision3 {
             }
 
             var toReturn = Common.numberOfValuesWithFix(cursor);
-            cursor *= 2;
+            cursor = Math.max(cursor + 1, cursor * 2);
             return toReturn;
         }
     }
