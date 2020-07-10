@@ -13,6 +13,6 @@ public class PrecisionPair {
 
     @Override
     public String toString() {
-        return String.format("%d, %d, %d", (int)low, (int)high, numberOfValuesBetween);
+        return String.format("%d, %d, %d", (long)low, (long)high, numberOfValuesBetween);
     }
 }

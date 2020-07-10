@@ -17,6 +17,6 @@ public class PrecisionPair2 {
 
     @Override
     public String toString() {
-        return String.format("%d, %d, %d, %d,", (int)low, (int)high, (int)GetDifference(), numberOfValuesBetween);
+        return String.format("%d, %d, %d, %d,", (long)low, (long)high, (long)GetDifference(), numberOfValuesBetween);
     }
 }
