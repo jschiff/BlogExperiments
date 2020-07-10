@@ -42,7 +42,7 @@ public class FloatingPointPrecision2 {
             }
 
             var toReturn = Common.numberOfValues(cursor);
-            cursor *= 2;
+            cursor = Math.max(cursor + 1, cursor * 2);
             return toReturn;
         }
     }
