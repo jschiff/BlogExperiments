@@ -12,6 +12,7 @@ public class FloatingPointPrecision3 {
         var fpp = new FloatingPointPrecision3();
         var results = fpp.processRange(start, end);
 
+        System.out.println("Low, High, Values In Between");
         results.forEach(pair -> System.out.println(pair.toString()));
     }
 
