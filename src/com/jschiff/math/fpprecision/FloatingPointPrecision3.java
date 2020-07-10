@@ -12,7 +12,7 @@ public class FloatingPointPrecision3 {
         var fpp = new FloatingPointPrecision3();
         var results = fpp.processRange(start, end);
 
-        results.forEach(pair -> System.out.println(pair.toStringWithDifference()));
+        results.forEach(pair -> System.out.println(pair.toString()));
     }
 
     public Stream<PrecisionPair2> processRange(float start, float end) {
